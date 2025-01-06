@@ -6,7 +6,7 @@ def home(request):
 
 def order(request):
     if request.method == 'POST':
-        filled_form = PizzaForm(request.POST, request.FILES)
+        filled_form = PizzaForm(request.POST)
         if filled_form.is_valid():
             note = '''Thanks for your order! Your 
             %s, %s, and %s pizza is on its way.''' %(filled_form.cleaned_data['size'], 
